@@ -35,6 +35,13 @@
             border: none; 
             font-size: x-large; 
             border-radius: 5px;
+            outline: none;
+        }
+        #num{
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            height: 30px;
         }
     </style>
 </head>
@@ -55,7 +62,7 @@
         </li>
     </ol>
     <div style="display: block; margin: auto; text-align: center;">
-    <input type="number" placeholder="Enter the Number of terms" id="num"> <br> <br>
+    <input type="number" placeholder="Enter the Number of terms" min="0" id="num"> <br> <br>
     <button onclick="Result()">Get Terms</button>
     </div> <br>
     <div id="result"></div>
