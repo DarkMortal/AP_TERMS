@@ -91,6 +91,9 @@
             document.getElementById("result").innerHTML="You should take the terms as:-<br>"+res;
             res="";
         }
+        document.addEventListener("contextmenu",function(arg){
+           arg.preventDefault();
+        });
     </script>
 </body>
 </html>
