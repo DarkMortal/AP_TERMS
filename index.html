@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP TERMS</title>
+    <style>
+        body{
+            font-family: sans-serif; 
+            background-color: #323238; 
+            padding: 5px; 
+            color: white;
+
+            user-select: none; /* supported by Chrome and Opera */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+        }
+        #result{
+            color: white; 
+            font-size: 25px; 
+            text-align: center; 
+            overflow-x: auto; 
+            width: 100%; 
+            height: 75px; 
+            overflow-y: hidden; 
+            display: inline-block; 
+            white-space: nowrap;
+        }
+        button{
+            background: green; 
+            color: white; 
+            border: none; 
+            font-size: x-large; 
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; display: block; margin: auto;"><b><u>This website will show you how to consider terms of an AP in tricky questions like:-</u></b></h1>
+    <ol type="1" style="font-size: large;">
+        <li>
+           The sum of first 3 terms of an AP is 21 and the product of the first and the third terms exceeds the second term by 6. Find the 3 terms.
+           <br> <i>Answer:- 1,3,7</i>
+        </li>
+        <li>
+            The sum of 3 numbers in AP is 27 and their product is 27. Find the numbers.
+            <br> <i>Answer:- 6,9,12</i>
+        </li>
+        <li>
+            Find 4 numbers in AP whose sum is 50 and in which the greatest number is 4 times the least.
+            <br> <i>Answer:- 5,10,15,20</i>
+        </li>
+    </ol>
+    <div style="display: block; margin: auto; text-align: center;">
+    <input type="number" placeholder="Enter the Number of terms" id="num"> <br> <br>
+    <button onclick="Result()">Get Terms</button>
+    </div> <br>
+    <div id="result"></div>
+    <script>
+        var res="";
+        function Disp(x){
+            if(x==1) res+="+d";
+            else if(x==-1) res+="-d";
+            else if(x>0) res+="+"+x+"d";
+            else if(x<0) res+=x+"d";
+        }
+        function Result(){
+            var num = parseInt(document.getElementById("num").value);
+            var term,progress;
+            if(num%2==0){ term=num-1; progress=2;}
+            else{ term=(num-1)/2; progress=1;}
+            for(var i=-term;i<=term;i+=progress){
+            if(i!=0){
+                console.log(i+"\n");
+                res+="(a";
+                Disp(i);
+                res+=") ";
+            }
+            else res+="a ";
+            }
+            document.getElementById("result").innerHTML="You should take the terms as:-<br>"+res;
+            res="";
+        }
+    </script>
+</body>
+</html>
